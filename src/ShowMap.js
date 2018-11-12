@@ -15,7 +15,7 @@ class ShowMap extends Component {
   }
   render() {
     const {google, markers, onMouseoverMarker,
-      onMapClicked, currentMarker, selectedPlace, showingInfoWindow,
+      onMapClicked, currentMarker, selectedPlace, infoWindowOpen,
       markerClickedFromList, isListClicked, markerIndex, newMarkers} = this.props;
     // get the markers on the page based on the user clicked on sidebar or map
     var newActiveMarkers = isListClicked?newMarkers:markers
@@ -57,7 +57,7 @@ class ShowMap extends Component {
           }
           <InfoWindow
             marker={currentMarker}
-            visible={showingInfoWindow}>
+            visible={infoWindowOpen}>
               <div className="infoWindow-container">
                 <p>{selectedPlace.name}</p>
                 <p>{selectedPlace.address}</p>

@@ -36,7 +36,7 @@ class App extends Component {
     allNearbyLocations: [],
     currentMarker: {},
     selectedPlace: {},
-    showingInfoWindow: false,
+    infoWindowOpen: false,
     markerClickedFromList: {},
     isListClicked: false,
     markerindex: 0,
@@ -52,6 +52,12 @@ class App extends Component {
         console.error('Error retrieving the venues from the foursquare site:', error);
       });
   }
+
+
+
+
+/**************** Querying *************************************************************/
+
   /**
    * update the markers on the page depending on the user query. filtering of the
    * locations is based on both defult markers and markers provided by foursquare.
@@ -73,6 +79,17 @@ class App extends Component {
       this.setState({activeMarkers: newLocations})
     }
   }
+
+   /**
+   * when user types a query, update the marker according to the query
+   */
+  getQuery = (query)=> {
+    this.setState({query})
+    this.updateMarkers(query);
+  }
+
+/*****************************************************************************/
+
   /**
    * set the formattedAddress[0] field of a location to " " if the location is undefined
    */
@@ -82,13 +99,21 @@ class App extends Component {
     ))
     return newLocations
   }
-  /**
-   * when user types a query, update the marker according to the query
-   */
-  getQuery = (query)=> {
-    this.setState({query})
-    this.updateMarkers(query);
-  }
+
+
+
+
+
+
+/**************** Markers *************************************************************/
+
+ 
+
+
+
+
+
+  
   /**
    * based on the query, filter out the matching markers on the page and store
    * them as active markers.
@@ -98,17 +123,7 @@ class App extends Component {
     var showLocations = newLocations.filter((location) => match.test(location.name))
     this.setState({activeMarkers:showLocations})
   }
-  /**
-   * when map is clicked other than marker, then hide any infoWindow being shown
-   */
-  onMapClicked = (props) =>{
-  if (this.state.showingInfoWindow) {
-      this.setState({
-        showingInfoWindow: false,
-        currentMarker: null
-      })
-    }
-  };
+
   /**
    * when marker is clicked, show the infoWindow attaced to it
    */
@@ -116,7 +131,7 @@ class App extends Component {
     this.setState({
       selectedPlace: props,
       currentMarker: marker,
-      showingInfoWindow: true
+      infoWindowOpen: true
     });
   }
   /**
@@ -126,7 +141,7 @@ class App extends Component {
     this.setState({
       selectedPlace: props,
       currentMarker: marker,
-      showingInfoWindow: true
+      infoWindowOpen: true
     });
   }
   /**
@@ -134,7 +149,7 @@ class App extends Component {
    */
   onMouseOutMarker = (e) =>
       this.setState({
-        showingInfoWindow: false,
+        infoWindowOpen: false,
         currentMarker: null
     });
 
@@ -154,6 +169,50 @@ class App extends Component {
     })
   }
 
+/*****************************************************************************/
+
+
+
+
+
+
+
+
+
+  /**
+   * when map is clicked other than marker, then hide any infoWindow being shown
+   */
+  onMapClicked = () =>{
+  if (this.state.infoWindowOpen) {
+      this.setState({
+        infoWindowOpen: false,
+        currentMarker: null
+      })
+    }
+  };
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   render() {
     return (
       <div className="App">
@@ -161,7 +220,7 @@ class App extends Component {
         getQuery={this.getQuery} onMarkerClickFromList={this.onMarkerClickFromList}/>
 
         <ShowMap markers={this.state.activeMarkers} currentMarker={this.state.currentMarker}
-        selectedPlace={this.state.selectedPlace} showingInfoWindow={this.state.showingInfoWindow}
+        selectedPlace={this.state.selectedPlace} infoWindowOpen={this.state.infoWindowOpen}
         onMarkerClick={this.onMarkerClick} onMouseoverMarker={this.onMouseoverMarker}
         onMouseOutMarker={this.onMouseOutMarker} onMapClicked={this.onMapClicked}
         markerClickedFromList={this.state.markerClickedFromList}
