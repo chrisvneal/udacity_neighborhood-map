@@ -22,8 +22,8 @@ class ShowMap extends Component {
     return (
       <div className="map-container">
         <Map google={google} initialCenter={{
-                  lat: 32.576139,
-                  lng: -117.014674
+                  lat: 21.285002,
+                  lng: -157.835698
                 }}
           zoom={14}
           onClick={(props)=> onMapClicked(props)}

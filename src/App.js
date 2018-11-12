@@ -4,25 +4,29 @@ import ShowMap from './ShowMap';
 import escapeRegExp from 'escape-string-regexp';
 
 var foursquare = require('react-foursquare')({
-  clientID: 'PF2PXHO1CXGHJE4ZTURAESVOF5DGBK14DF05CYRQURPLWT42',
-  clientSecret: 'KQQTV2WASQX23QCDZQQRA4MSTNRJZGDZ1YEB3KMSOJAGOAAO'
+  clientID: 'CEEUXJNP2ZJ33ITK2VO0SDF5TGW3DFK5VC5U1EJHFFP15CUM',
+  clientSecret: 'NFAD2QOVVJ0BPITYSHYMEFCM0MWGAZ0DB5PNUO4OACUVC2B3'
 });
 //initial location details are provided
 var params = {
-  "ll": "32.576139,-117.014674"
+  "near": "Waikiki,HI",
+  "query": "food",
+  "radius": 1000,
+  "limit": 10,
+  "v": 20181111
 };
 //defaultMarkers positions are provided
 var defaultMarkers = [
-  {id: 1, name: 'Aquatica San Diego', location: {labeledLatLngs: [{
-    lat: 32.587840, lng: -117.010753}], formattedAddress: ["2052 Entertainment Cir"]}, animation: null },
-  {id: 2, name: 'Ocean View Hills Community Park', location: {labeledLatLngs: [{
-    lat: 32.582299, lng: -117.026841}], formattedAddress: ["San Diego, CA 92154"]}, animation: null},
-  {id: 3, name: 'North Island Credit Union Amphitheatre', location: {labeledLatLngs: [{
-    lat: 32.587917, lng: -117.006351}], formattedAddress: ["2050 Entertainment Cir"]}, animation: null},
-  {id: 4, name: 'Vista Pacifica Park', location: {labeledLatLngs: [{
-    lat: 32.581037, lng: -117.005747}], formattedAddress: ["Avenida De Las Vistas"]}, animation: null},
-  {id: 5, name: 'Walmart', location: {labeledLatLngs: [{
-    lat: 32.581702, lng: -117.035608}], formattedAddress: ["710 Dennery Rd"]}, animation: null}
+  {id: 1, name: 'Food Galaxy Restaurant & Coffee Shop', location: {labeledLatLngs: [{
+    lat: 21.278930138770743, lng: -157.8258705887782}], formattedAddress: ["2310 Kuhio Ave (btwn Nohonani St. & Nahua St.)"]}, animation: null },
+  {id: 2, name: 'Hong Kong Fast Food', location: {labeledLatLngs: [{
+    lat: 21.278702, lng: -157.827653}], formattedAddress: ["2301 Kuhio Ave"]}, animation: null},
+  {id: 3, name: 'Food Pantry', location: {labeledLatLngs: [{
+    lat: 21.278865, lng: -157.828685}], formattedAddress: ["2259 Kalakaua Ave"]}, animation: null},
+  {id: 4, name: 'Arby\'s', location: {labeledLatLngs: [{
+    lat: 21.279112176185322, lng: -157.8284204500371}], formattedAddress: ["2250 Kalakaua Ave"]}, animation: null},
+  {id: 5, name: 'Princess Food Court', location: {labeledLatLngs: [{
+    lat: 21.27944142606819, lng: -157.82939847985838}], formattedAddress: ["120 Kaiulani Ave"]}, animation: null}
 ];
 
 class App extends Component {
