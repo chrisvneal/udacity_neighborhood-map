@@ -11,7 +11,7 @@ class ShowMap extends Component {
       } else {
         marker.setAnimation(this.props.google.maps.Animation.BOUNCE);
       }
-      this.props.onMarkerClick(props, marker, e)
+      this.props.showInfoWindow(props, marker, e)
   }
   render() {
     const {google, markers, onMouseoverMarker,

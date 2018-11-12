@@ -28,7 +28,7 @@ class FilterLocation extends Component {
     })
   }
   render() {
-    const {markers, query, getQuery, onMarkerClickFromList} = this.props
+    const {markers, query, getQuery, showInfoWindowFromList} = this.props
     const {isHamBurgerIconOn, viewCount} = this.state
     return (
       <div className='filter-container'>
@@ -68,7 +68,7 @@ class FilterLocation extends Component {
           {markers.map((marker, index) => (
             <li key={index} className='marker-list-item' role='treeitem' tabIndex={0}>
               <div className='marker-details'
-              onClick={() => onMarkerClickFromList(marker, index)}
+              onClick={() => showInfoWindowFromList(marker, index)}
               >
               {marker.name}
               </div>
