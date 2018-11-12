@@ -88,7 +88,7 @@ body {
   border-radius: 0.5em;
   border: 0.2em solid #b55858;
 }
-.InfoWindow-container{
+.InfoWindow-container {
   position: fixed;
   left: 0px;
   top: 0px;
