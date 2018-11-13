@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import FilterLocation from './FilterLocation';
+import ListView from './ListView';
 import ShowMap from './ShowMap';
 import escapeRegExp from 'escape-string-regexp';
 
@@ -206,7 +206,7 @@ showInfoWindowFromList = (marker, index) =>{
   render() {
     return (
       <div className="App">
-        <FilterLocation 
+        <ListView 
           markers={this.state.activeMarkers} 
           query={this.state.query}
           getQuery={this.getQuery} 

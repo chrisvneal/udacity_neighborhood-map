@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { debounce } from 'throttle-debounce';
 
-class FilterLocation extends Component {
+class ListView extends Component {
   state={
     isHamBurgerIconOn: false,
     viewCount: 0
@@ -82,4 +82,4 @@ class FilterLocation extends Component {
   }
 }
 
-export default FilterLocation;
+export default ListView;
