@@ -109,21 +109,23 @@ body {
 /* Info window styles */
 
 
-.InfoWindow-container {
-  position: fixed;
-  left: 0px;
+/* .InfoWindow-container {
+  position: absolute;
+  left: 100px;
   top: 0px;
   width: 25%;
   z-index: 2;
   width: 100%;
   height: 100vh;
+  height: 600px;
   background-color: black;
   color: white;
-}
+  border: 23px solid blue;
+} */
 
-.info-title {
+/* .info-title {
   font-weight: bold;
-}
+} */
 
 /* menu styles */
 

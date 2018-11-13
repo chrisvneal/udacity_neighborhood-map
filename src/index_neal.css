@@ -32,6 +32,21 @@ body {
   z-index: -1;
 } */
 
+/* .InfoWindow-container {
+  position: absolute;
+  left: 100px;
+  top: 0px;
+  width: 25%;
+  z-index: 2;
+  width: 100%;
+  height: 100vh;
+  height: 600px;
+  background-color: black;
+  color: white;
+  border: 23px solid blue;
+  display: block;
+} */
+
 /*********************** hamburger icon styles ***********************/
 
 .hamburger-icon {
@@ -133,6 +148,10 @@ body {
   padding: 0;
   margin: 0;
   display: inline;
+}
+
+.info-title {
+  font-weight: bold;
 }
 
 
