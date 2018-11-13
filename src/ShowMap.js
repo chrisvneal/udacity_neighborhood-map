@@ -5,20 +5,17 @@ class ShowMap extends Component {
 
   // show marker animation & display infoWindow
   activateMarker = (props, marker, e) =>{
-    // console.log('activated')
+
       if (marker.getAnimation() !== null) {
-        marker.setAnimation(null);
-        
+        marker.setAnimation(null);        
       } else {
         marker.setAnimation(this.props.google.maps.Animation.BOUNCE);
       }
 
-
-
       this.props.showInfoWindow(props, marker, e)
   }
 
-
+  /*****************************************************************************/
 
   render() {
     const {google, markers, showInfoWindow,
@@ -26,10 +23,7 @@ class ShowMap extends Component {
       markerClickedFromList, isListClicked, markerIndex, newMarkers} = this.props;
 
     // get the markers on the page based on the user clicked on sidebar or map
-
-    // has the list been clicked? if so load newmarkers, if not load markers
-    let newActiveMarkers = isListClicked ? newMarkers : markers
-    
+    let newActiveMarkers = isListClicked ? newMarkers : markers    
     
     return (
       <div className="map-container">
@@ -41,6 +35,7 @@ class ShowMap extends Component {
               zoom={17}
               onClick={(props)=> onMapClick(props)}
           >
+          
           {  // get all the active markers on the page
             newActiveMarkers.map((mapLocation, index) => (
               <Marker key={index}
@@ -51,9 +46,6 @@ class ShowMap extends Component {
 
                onClick={(props, mapLocation, e) => this.activateMarker(props, mapLocation, e)}
                onMouseover={(props, mapLocation, e) => showInfoWindow(props, mapLocation)}
-               onMouseleave={() => {
-                 alert('hello');
-               }}
                
                animation = { isListClicked ? null : this.props.google.maps.Animation.DROP }
               />

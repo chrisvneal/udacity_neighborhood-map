@@ -19,6 +19,7 @@ const params = {
   "limit": 10,
   "v": 20181111
 };
+
 // Default marker positions
 const defaultMarkers = [
   {id: 1, name: 'Food Galaxy Restaurant & Coffee Shop', location: {labeledLatLngs: [{
@@ -63,6 +64,7 @@ class App extends Component {
     ))
     return newLocations
   }
+
 /**************** Querying *****************************************/
 
   // Filter selection based on user queries
@@ -92,7 +94,7 @@ class App extends Component {
     this.updateMarkers(query);
   }
 
-/**************** Markers ******************************************/
+  /**************** Markers ******************************************/
 
   // Make filtered locations active markers
   findMarkers = (query, newLocations)=>{
@@ -112,7 +114,6 @@ class App extends Component {
     });
   }
 
-
   hideInfoWindow = (props) =>{
     if (this.state.infoWindowOpen) { 
         this.setState({ infoWindowOpen: false, currentMarker: null })
@@ -127,11 +128,7 @@ class App extends Component {
       newActiveMarkers: this.state.activeMarkers.filter((thisMarker)=>(
         thisMarker.id !== marker.id      
       ))
-    })
-
-    // alert(marker.name);
-
-   
+    })   
   }
 
 /*****************************************************************************/
