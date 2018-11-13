@@ -112,17 +112,11 @@ class App extends Component {
     });
   }
 
-  // hide infoWindow
-  // hideInfoWindow = () =>
-  //     this.setState({
-  //       infoWindowOpen: false,
-  //       currentMarker: null
-  //   });
 
-    hideInfoWindow = (props) =>{
-      if (this.state.infoWindowOpen) { 
-          this.setState({ infoWindowOpen: false, currentMarker: null })
-        }};
+  hideInfoWindow = (props) =>{
+    if (this.state.infoWindowOpen) { 
+        this.setState({ infoWindowOpen: false, currentMarker: null })
+      }};
 
   // Show InfoWindow from the list 
   showInfoWindowFromList = (marker, index) =>{
@@ -134,6 +128,10 @@ class App extends Component {
         thisMarker.id !== marker.id      
       ))
     })
+
+    // alert(marker.name);
+
+   
   }
 
 /*****************************************************************************/

@@ -22,10 +22,12 @@ class ShowMap extends Component {
 
   render() {
     const {google, markers, showInfoWindow,
-      onMapClicked, currentMarker, selectedPlace, infoWindowOpen,
+      onMapClick, currentMarker, selectedPlace, infoWindowOpen,
       markerClickedFromList, isListClicked, markerIndex, newMarkers} = this.props;
 
     // get the markers on the page based on the user clicked on sidebar or map
+
+    // has the list been clicked? if so load newmarkers, if not load markers
     let newActiveMarkers = isListClicked ? newMarkers : markers
     
     
@@ -37,7 +39,7 @@ class ShowMap extends Component {
                   lng: -157.827652
                 }}
               zoom={17}
-              onClick={(props)=> onMapClicked(props)}
+              onClick={(props)=> onMapClick(props)}
           >
           {  // get all the active markers on the page
             newActiveMarkers.map((mapLocation, index) => (
