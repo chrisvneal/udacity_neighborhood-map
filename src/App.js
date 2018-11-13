@@ -153,9 +153,11 @@ showInfoWindowFromList = (marker, index) =>{
     isListClicked: true,
     markerindex: index,
     newActiveMarkers: this.state.activeMarkers.filter((thisMarker)=>(
-      thisMarker.id !== marker.id
+      thisMarker.id !== marker.id      
     ))
   })
+
+  // alert(marker.location)
 }
   
 

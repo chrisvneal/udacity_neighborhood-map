@@ -5,8 +5,10 @@ class ShowMap extends Component {
 
   // show marker animation & display infoWindow
   activateMarker = (props, marker, e) =>{
+    // console.log('activated')
       if (marker.getAnimation() !== null) {
         marker.setAnimation(null);
+        
       } else {
         marker.setAnimation(this.props.google.maps.Animation.BOUNCE);
       }

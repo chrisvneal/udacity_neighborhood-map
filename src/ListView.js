@@ -69,7 +69,7 @@ class ListView extends Component {
         {/* List of locations */}
         <ol className='locations-list'>
           {markers.map((marker, index) => (
-            <li key={index} className='locations-list-item' role='treeitem' tabIndex={0}>
+            <li key={index} className='locations-list-item' role='treeitem' tabIndex={0} onClick={() => showInfoWindowFromList(marker, index)}>
               <div className='marker-details'
               onClick={() => showInfoWindowFromList(marker, index)}
               >
