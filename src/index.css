@@ -56,25 +56,19 @@ body {
   font-size: 1em;
   border: 1px solid #eee;
   width: 85%;
-  flex: 10;
+  flex: 8;
 }
 
 .search-locations--input:focus {
   background-image: url('./icons/filter-afterInteraction.svg');
 }
 
-.close-search {
-  width: 25px;
-  height: 40px;  
-  background-position: right;
+.close-search { 
   background-image: url('./icons/cancel.svg');
-  background-position: 47%;
-  background-repeat: no-repeat;
-  background-size: 20px;
-  font-size: 0;
-  cursor: pointer;
-  border-radius: 0.5em;
-  border: 0.2em solid #b55858;
+}
+
+.close-menu {
+  background-image: url('./icons/arrow-back.svg');
 }
 
 .close-search, .close-menu {
@@ -84,18 +78,11 @@ body {
 .close-menu,.hamburger-icon,.close-search {
   width: 25px;
   height: 40px;
-  background-position: right;
   background-position: 47%;
   background-repeat: no-repeat;
   background-size: 25px;
   font-size: 0;
   cursor: pointer;
-}
-
-.close-menu {
-  background-image: url('./icons/arrow-back.svg');
-  border-radius: 0.5em;
-  border: 0.2em solid #b55858;
 }
 
 /*********************** locations list styles ***********************/
