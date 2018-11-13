@@ -10,7 +10,7 @@ body {
 
 /* filter styles */
 /* 
-.filter-container {
+.list_view {
   position: absolute;
   left: 0px;
   top: 0px;
@@ -22,3 +22,78 @@ body {
   color: #bdbaba;
 }
  */
+
+ /* .map {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+} */
+
+/*********************** search styles ***********************/
+.search-locations-input-wrapper {
+  padding: 2px;
+  display: flex;
+}
+
+.search-locations--input {
+  padding: 10px;
+  background-image: url('./icons/filter.svg');
+  background-repeat: no-repeat;
+  background-position: 90%;
+  background-size: 1em;
+  font-size: 1em;
+  border: 1px solid #eee;
+  width: 85%;
+  flex: 10;
+}
+
+.search-locations--input:focus {
+  background-image: url('./icons/filter-afterInteraction.svg');
+}
+
+.close-search {
+  width: 25px;
+  height: 40px;  
+  background-position: right;
+  background-image: url('./icons/cancel.svg');
+  background-position: 90%;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  font-size: 0;
+  cursor: pointer;
+  border-radius: 0.5em;
+  border: 0.2em solid #b55858;
+}
+
+.close-search, .return-hamburger {
+  flex: 1;
+}
+
+/* Locations list styles  */
+.locations-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  background: rgb(95, 95, 95);
+  color: #dfdede;
+}
+
+.locations-list-item {
+  padding: 25px 10px;
+  font-size: 1em;
+  border-bottom: 1px dashed gray;
+}
+
+.locations-list-item:hover{
+  cursor: pointer;
+}
+
+.marker-details {
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  display: inline;
+}

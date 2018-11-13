@@ -31,7 +31,7 @@ class ListView extends Component {
     const {markers, query, getQuery, showInfoWindowFromList} = this.props
     const {isHamBurgerIconOn, viewCount} = this.state
     return (
-      <div className='filter-container'>
+      <div className='list_view'>
       {(isHamBurgerIconOn === false) &&
         <div className="hamburger-icon-wrapper">
           <button className='hamburger-icon'
@@ -44,7 +44,7 @@ class ListView extends Component {
         <div className='filter-location'>
           <div className="search-locations-input-wrapper">
             <input
-              className='search-locations'
+              className='search-locations--input'
               type="text"
               name="search"
               aria-label="Search"
@@ -64,9 +64,12 @@ class ListView extends Component {
               onClick={()=> this.getBackHamburgerIcon()}>Back</button>
             )}
         </div>
-        <ol className='marker-list'>
+
+
+        {/* List of locations */}
+        <ol className='locations-list'>
           {markers.map((marker, index) => (
-            <li key={index} className='marker-list-item' role='treeitem' tabIndex={0}>
+            <li key={index} className='locations-list-item' role='treeitem' tabIndex={0}>
               <div className='marker-details'
               onClick={() => showInfoWindowFromList(marker, index)}
               >
