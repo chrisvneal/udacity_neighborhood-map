@@ -73,7 +73,7 @@ class ShowMap extends Component {
             marker={currentMarker}
             visible={infoWindowOpen}>
               <div className="infoWindow-container">
-                <p>{selectedPlace.name}</p>
+                <p className="info-title" >{selectedPlace.name}</p>
                 <p>{selectedPlace.address}</p>
               </div>
          </InfoWindow>

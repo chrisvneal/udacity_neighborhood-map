@@ -99,6 +99,10 @@ body {
   background-color: black;
   color: white;
 }
+
+.info-title {
+  font-weight: bold;
+}
 .marker-details:hover{
   cursor: pointer;
   background-color: #a1ab9e;
