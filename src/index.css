@@ -50,6 +50,12 @@ body {
 .search-locations:focus {
   background-image: url('./icons/filter-afterInteraction.svg');
 }
+
+
+
+
+
+/* view list styles  */
 .marker-list {
   width: 100%;
   margin: 0;
@@ -69,6 +75,18 @@ body {
   margin: 0;
   display: inline;
 }
+
+.marker-details:hover{
+  cursor: pointer;
+  background-color: #a1ab9e;
+  color: #4a4848
+}
+
+
+
+
+
+
 .search-locations-input-wrapper {
   width:100%;
   padding: 0.5px;
@@ -88,6 +106,14 @@ body {
   border-radius: 0.5em;
   border: 0.2em solid #b55858;
 }
+
+
+/* search styles */
+
+
+
+
+
 .InfoWindow-container {
   position: fixed;
   left: 0px;
@@ -103,11 +129,7 @@ body {
 .info-title {
   font-weight: bold;
 }
-.marker-details:hover{
-  cursor: pointer;
-  background-color: #a1ab9e;
-  color: #4a4848
-}
+
 .hamburger-icon {
   width: 25px;
   height: 40px;
