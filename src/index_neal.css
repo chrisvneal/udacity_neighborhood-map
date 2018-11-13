@@ -42,6 +42,7 @@ body {
   background-size: 30px;
   cursor: pointer;
   background-image: url('./icons/hamburger.svg');
+  padding: 25px; 
 }
 
 /*********************** search styles ***********************/
@@ -102,6 +103,9 @@ body {
   border: 0.2em solid #b55858;
 }
 
+.list_view {
+  background: #FEF8F0;
+}
 
 
 /* Locations list styles  */
@@ -121,6 +125,7 @@ body {
 
 .locations-list-item:hover{
   cursor: pointer;
+  color: #AADAFF;
 }
 
 .marker-details {
@@ -132,12 +137,16 @@ body {
 
 
 
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 700px) {
+  html {
+    height: 100vh;
+  }
   .list_view {
     width: 30%;
     position: absolute;
     left: 0;
     top: 0;
+    height: 100vh;
   }
 
   .map-container {
