@@ -5,14 +5,14 @@ import escapeRegExp from 'escape-string-regexp';
 
 
 // Foursquare API authentication
-let foursquare = require('react-foursquare')({
+const foursquare = require('react-foursquare')({
   clientID: 'CEEUXJNP2ZJ33ITK2VO0SDF5TGW3DFK5VC5U1EJHFFP15CUM',
   clientSecret: 'NFAD2QOVVJ0BPITYSHYMEFCM0MWGAZ0DB5PNUO4OACUVC2B3'
 });
 
 
 // Initial location details
-let params = {
+const params = {
   "near": "Waikiki,HI",
   "query": "food",
   "radius": 1000,
@@ -20,7 +20,7 @@ let params = {
   "v": 20181111
 };
 // Default marker positions
-let defaultMarkers = [
+const defaultMarkers = [
   {id: 1, name: 'Food Galaxy Restaurant & Coffee Shop', location: {labeledLatLngs: [{
     lat: 21.278930138770743, lng: -157.8258705887782}], formattedAddress: ["2310 Kuhio Ave (btwn Nohonani St. & Nahua St.)"]}, animation: null },
   {id: 2, name: 'Hong Kong Fast Food', location: {labeledLatLngs: [{
