@@ -1,29 +1,24 @@
-# MyReads Project
+# Neighborhood Map w/ React Project - Udacity FEND
 
-This is a neighborhood-map app is developed using React, google-maps-react and
-foursquare api. The app uses foursquare api to get the venue details and google
-map features to display the map marker and window on the page. The app helps in
-locating all the nearby locations to my current location in addition to the default
-locations that is mentioned in the code. The map also helps in filtering out the
-locations based on the user input.
+This Neighborhood Map was built using the React.js UI library and is the final project of the Udacity Front End Nanodegree program. The map was built using the [Google API](https://developers.google.com/maps/documentation/javascript/tutorial) and used data from [Foursquare's API.](https://developer.foursquare.com/docs)
 
-## Link
 
-This app can be accessed using index.html after downloading the project from (https://github.com/apatraray/neighbourhood-map.git)
-## Running using local machine
 
-### Running
-Start the App:
-`start a terminal`
-`run npm install`
-`run npm start`
 
-### Using the app
+## Using the Foursquare and Google Maps APIs
+As the page loads, markers are plotted on a map detailing venues in the area of Waiki, Hawaii. The Foursquare API provides this data and the Google API helps plot the markers and other locations.
 
-The app server can be found at [localhost:3000](http://localhost:3000)
 
-## Dependencies
+This app will especially help visitors to the Island who are in search of the hottest food spots in Waikiki. Type in the name of your favorite restaurant and it just might pop out - the closest locations will be plotted along the map.
 
-This App contains following dependencies:
-- google-map-react component which provides a set of the Google Maps API
-- react-foursquare component which provides a set of the foursquare API
+
+
+## Running the app
+
+Download or clone this respository to your local computer and inside a terminal, inside the project directory, type: 
+
+```git clone https://github.com/chrisvneal/udacity_neighborhood-map.git```
+
+then
+* run ```npm install``` to install dependencies
+* run ```npm start``` to load a server and run the project, the site will load automatically
