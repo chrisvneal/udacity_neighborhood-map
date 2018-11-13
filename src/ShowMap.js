@@ -53,7 +53,7 @@ class ShowMap extends Component {
                  alert('hello');
                }}
                
-               animation = {isListClicked?null:this.props.google.maps.Animation.DROP}
+               animation = { isListClicked ? null : this.props.google.maps.Animation.DROP }
               />
             ))
           }
@@ -66,8 +66,7 @@ class ShowMap extends Component {
                name={markerClickedFromList.name}
                address={markerClickedFromList.location.formattedAddress[0]||[]}
                position={markerClickedFromList.location.labeledLatLngs[0]||{}}
-               animation = {this.props.google.maps.Animation.BOUNCE}
-              />
+              animation = { isListClicked ? this.props.google.maps.Animation.BOUNCE : null } />
             )
           }
           
