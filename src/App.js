@@ -5,14 +5,14 @@ import escapeRegExp from 'escape-string-regexp';
 
 
 // Foursquare API authentication
-var foursquare = require('react-foursquare')({
+let foursquare = require('react-foursquare')({
   clientID: 'CEEUXJNP2ZJ33ITK2VO0SDF5TGW3DFK5VC5U1EJHFFP15CUM',
   clientSecret: 'NFAD2QOVVJ0BPITYSHYMEFCM0MWGAZ0DB5PNUO4OACUVC2B3'
 });
 
 
 // Initial location details
-var params = {
+let params = {
   "near": "Waikiki,HI",
   "query": "food",
   "radius": 1000,
@@ -20,7 +20,7 @@ var params = {
   "v": 20181111
 };
 // Default marker positions
-var defaultMarkers = [
+let defaultMarkers = [
   {id: 1, name: 'Food Galaxy Restaurant & Coffee Shop', location: {labeledLatLngs: [{
     lat: 21.278930138770743, lng: -157.8258705887782}], formattedAddress: ["2310 Kuhio Ave (btwn Nohonani St. & Nahua St.)"]}, animation: null },
   {id: 2, name: 'Hong Kong Fast Food', location: {labeledLatLngs: [{
@@ -67,7 +67,7 @@ class App extends Component {
 
   // Filter selection based on user queries
   updateMarkers(query){
-    var defaultMarkersFiltered = defaultMarkers
+    let defaultMarkersFiltered = defaultMarkers
     this.state.allNearbyLocations.map((location)=>(
       defaultMarkersFiltered = defaultMarkersFiltered.filter((defaultLocation)=>
         (location.name!==defaultLocation.name)
@@ -75,7 +75,7 @@ class App extends Component {
     )
 
     //get all the locations removing common location from default marker
-    var newLocations = defaultMarkersFiltered.concat(this.state.allNearbyLocations)
+    let newLocations = defaultMarkersFiltered.concat(this.state.allNearbyLocations)
     newLocations=this.setFormattedAddress(newLocations)
 
     if(query!=='') {
@@ -97,7 +97,7 @@ class App extends Component {
   // Make filtered locations active markers
   findMarkers = (query, newLocations)=>{
     const match = new RegExp(escapeRegExp(query), 'i')
-    var showLocations = newLocations.filter((location) => match.test(location.name))
+    let showLocations = newLocations.filter((location) => match.test(location.name))
     this.setState({activeMarkers:showLocations})
   }
 

@@ -26,7 +26,7 @@ class ShowMap extends Component {
       markerClickedFromList, isListClicked, markerIndex, newMarkers} = this.props;
 
     // get the markers on the page based on the user clicked on sidebar or map
-    var newActiveMarkers = isListClicked ? newMarkers : markers
+    let newActiveMarkers = isListClicked ? newMarkers : markers
     
     
     return (
