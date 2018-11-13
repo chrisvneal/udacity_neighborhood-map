@@ -63,13 +63,6 @@ class App extends Component {
     ))
     return newLocations
   }
-
-  // hide any open InfoWindows when map is clicked
-  onMapClicked = () =>{
-    if (this.state.infoWindowOpen) { 
-        this.setState({ infoWindowOpen: false, currentMarker: null })
-      }};
-
 /**************** Querying *****************************************/
 
   // Filter selection based on user queries
@@ -120,23 +113,29 @@ class App extends Component {
   }
 
   // hide infoWindow
-  hideInfoWindow = () =>
-      this.setState({
-        infoWindowOpen: false,
-        currentMarker: null
-    });
+  // hideInfoWindow = () =>
+  //     this.setState({
+  //       infoWindowOpen: false,
+  //       currentMarker: null
+  //   });
 
- // Show InfoWindow from the list 
-showInfoWindowFromList = (marker, index) =>{
-  this.setState({
-    markerClickedFromList: marker,
-    isListClicked: true,
-    markerindex: index,
-    newActiveMarkers: this.state.activeMarkers.filter((thisMarker)=>(
-      thisMarker.id !== marker.id      
-    ))
-  })
-}
+    hideInfoWindow = (props) =>{
+      if (this.state.infoWindowOpen) { 
+          this.setState({ infoWindowOpen: false, currentMarker: null })
+        }};
+
+  // Show InfoWindow from the list 
+  showInfoWindowFromList = (marker, index) =>{
+    this.setState({
+      markerClickedFromList: marker,
+      isListClicked: true,
+      markerindex: index,
+      newActiveMarkers: this.state.activeMarkers.filter((thisMarker)=>(
+        thisMarker.id !== marker.id      
+      ))
+    })
+  }
+
 /*****************************************************************************/
 
   render() {
@@ -160,7 +159,7 @@ showInfoWindowFromList = (marker, index) =>{
           hideInfoWindow={this.hideInfoWindow} 
           infoWindowOpen={this.state.infoWindowOpen}          
 
-          onMapClicked={this.onMapClicked}          
+          onMapClick={this.hideInfoWindow}          
           isListClicked={this.state.isListClicked} 
 
           selectedPlace={this.state.selectedPlace}

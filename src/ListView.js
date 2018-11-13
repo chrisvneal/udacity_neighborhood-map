@@ -71,7 +71,7 @@ class ListView extends Component {
           {markers.map((marker, index) => (
             <li key={index} className='locations-list-item' role='treeitem' tabIndex={0} onClick={() => showInfoWindowFromList(marker, index)}>
               <div className='marker-details'
-              onClick={() => showInfoWindowFromList(marker, index)}
+              // onClick={() => showInfoWindowFromList(marker, index)}
               >
               {marker.name}
               </div>
