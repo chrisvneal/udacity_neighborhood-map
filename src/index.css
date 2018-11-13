@@ -22,6 +22,8 @@ body {
   top: 0px;
   z-index: -1;
 }
+
+/* filter styles */
 .filter-location-top {
   width: 100%;
 }
@@ -36,6 +38,9 @@ body {
   background-color: #4c4848;
   color: #bdbaba;
 }
+
+
+/* search styles */
 .search-locations {
   padding: 10px 0px 10px 15px;
   background-image: url('./icons/filter.svg');
@@ -50,7 +55,25 @@ body {
 .search-locations:focus {
   background-image: url('./icons/filter-afterInteraction.svg');
 }
-
+.search-locations-input-wrapper {
+  width:100%;
+  padding: 0.5px;
+  display: flex;
+}
+.close-search {
+  width: 25px;
+  height: 40px;
+  width: 24%;
+  background-position: right;
+  background-image: url('./icons/cancel.svg');
+  background-position: 90%;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  font-size: 0;
+  cursor: pointer;
+  border-radius: 0.5em;
+  border: 0.2em solid #b55858;
+}
 
 
 
@@ -83,35 +106,7 @@ body {
 }
 
 
-
-
-
-
-.search-locations-input-wrapper {
-  width:100%;
-  padding: 0.5px;
-  display: flex;
-}
-.close-search {
-  width: 25px;
-  height: 40px;
-  width: 24%;
-  background-position: right;
-  background-image: url('./icons/cancel.svg');
-  background-position: 90%;
-  background-repeat: no-repeat;
-  background-size: 20px;
-  font-size: 0;
-  cursor: pointer;
-  border-radius: 0.5em;
-  border: 0.2em solid #b55858;
-}
-
-
-/* search styles */
-
-
-
+/* Info window styles */
 
 
 .InfoWindow-container {
@@ -129,6 +124,8 @@ body {
 .info-title {
   font-weight: bold;
 }
+
+/* menu styles */
 
 .hamburger-icon {
   width: 25px;
@@ -168,6 +165,11 @@ body {
 .hamburger-icon:hover, .return-hamburger:hover, .close-search:hover {
   background-color: #8bbeec;
 }
+
+
+
+
+/* Media styles */
 @media only screen and (max-width : 1025px) {
   .hamburger-icon-wrapper {
   	display:none;
