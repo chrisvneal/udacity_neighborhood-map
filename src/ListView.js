@@ -13,7 +13,7 @@ class ListView extends Component {
   /**
    * show the sidebar when user clicks the hamburger icon.
    */
-  getHamBurgerIcon=()=> {
+  openSidebar=()=> {
     this.setState({
       isHamBurgerIconOn: true,
       viewCount: 1
@@ -22,7 +22,7 @@ class ListView extends Component {
   /**
    * hide the sidebar when user clicks the hamburger icon.
    */
-  getBackHamburgerIcon =()=>{
+  closeSidebar =()=>{
     this.setState({
       isHamBurgerIconOn: false
     })
@@ -36,7 +36,7 @@ class ListView extends Component {
         <div className="hamburger-icon-wrapper">
           <button className='hamburger-icon'
           aria-label='Expand to search places'
-          onClick={()=> this.getHamBurgerIcon()}></button>
+          onClick={()=> this.openSidebar()}></button>
         </div>
       }
       {/*show the sidebar as default for the first time and then hide*/}
@@ -61,7 +61,7 @@ class ListView extends Component {
             {(isHamBurgerIconOn === true) && (
               <button className='close-menu'
               aria-label='return to hamburger icon'
-              onClick={()=> this.getBackHamburgerIcon()}>Close Menu</button>
+              onClick={()=> this.closeSidebar()}>Close Menu</button>
             )}
         </div>
 
