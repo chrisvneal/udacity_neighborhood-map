@@ -1,4 +1,4 @@
-/* * {
+* {
   box-sizing: border-box;
 }
 body {
@@ -6,27 +6,10 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
   line-height: 1.5;
-} */
-
-
-
-.App {
-  text-align: center;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  padding: 5px;
-}
-.map {
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  z-index: -1;
 }
 
 /* filter styles */
+/* 
 .list_view {
   position: absolute;
   left: 0px;
@@ -38,76 +21,16 @@ body {
   background-color: #4c4848;
   color: #bdbaba;
 }
+ */
 
-
-/*********************** search styles ***********************/
-/* .search-locations {
-  padding: 10px 0px 10px 15px;
-  background-image: url('./icons/filter.svg');
-  background-repeat: no-repeat;
-  background-position: 90%;
-  background-size: 1em;
-  font-size: 1em;
-  border-radius: 0.5em;
-  border: 0.2em solid #b55858;
-  width: 85%;
-}
-.search-locations:focus {
-  background-image: url('./icons/filter-afterInteraction.svg');
-}
-.search-locations-input-wrapper {
-  width:100%;
-  padding: 0.5px;
-  display: flex;
-}
-.close-search {
-  width: 25px;
-  height: 40px;
-  width: 24%;
-  background-position: right;
-  background-image: url('./icons/cancel.svg');
-  background-position: 90%;
-  background-repeat: no-repeat;
-  background-size: 20px;
-  font-size: 0;
-  cursor: pointer;
-  border-radius: 0.5em;
-  border: 0.2em solid #b55858;
-} */
-
-
-
-
-/* view list styles  */
-/*.marker-list {
+ /* .map {
   width: 100%;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-.marker-list-item {
-  padding: 5px 0px 5px 15px;
-  display: flex;
-  font-size: 0.8em;
-  border-radius: 0.5em;
-  border: 0.1em solid;
-}
-.marker-details {
-  text-align: left;
-  padding: 0;
-  margin: 0;
-  display: inline;
-}
-
-.marker-details:hover{
-  cursor: pointer;
-  background-color: #a1ab9e;
-  color: #4a4848
+  height: 100vh;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -999;
 } */
-
-
-/* Info window styles */
-
 
 /* .InfoWindow-container {
   position: absolute;
@@ -121,33 +44,84 @@ body {
   background-color: black;
   color: white;
   border: 23px solid blue;
+  display: block;
 } */
 
-/* .info-title {
-  font-weight: bold;
-} */
+.App {
+  display: flex;
+}
 
-/* menu styles */
+.list_view {
+  flex: 1;
+  z-index: 1
+}
 
-/* .hamburger-icon {
-  width: 25px;
+
+.map-container {
+  flex: 1;
+  /* position: relative */
+}
+
+/*********************** hamburger icon styles ***********************/
+
+.hamburger-icon {
+  width: 40px;
   height: 40px;
-  background-position: right;
+  background-position: 47%;
+  background-repeat: no-repeat;
+  background-size: 30px;
+  cursor: pointer;
+  background-image: url('./icons/hamburger.svg');
+  padding: 25px; 
+}
+
+/*********************** search styles ***********************/
+.search-locations-input-wrapper {
+  padding: 2px;
+  display: flex;
+}
+
+.search-locations--input {
+  padding: 10px;
+  background-image: url('./icons/filter.svg');
+  background-repeat: no-repeat;
   background-position: 90%;
+  background-size: 1em;
+  font-size: 1em;
+  border: 1px solid #eee;
+  width: 85%;
+  flex: 10;
+}
+
+.search-locations--input:focus {
+  background-image: url('./icons/filter-afterInteraction.svg');
+}
+
+.close-search {
+  width: 25px;
+  height: 40px;  
+  background-position: right;
+  background-image: url('./icons/cancel.svg');
+  background-position: 47%;
   background-repeat: no-repeat;
   background-size: 20px;
   font-size: 0;
   cursor: pointer;
-  background-image: url('./icons/hamburger.svg');
-} */
+  border-radius: 0.5em;
+  border: 0.2em solid #b55858;
+}
 
 
 
-/* .close-menu,.hamburger-icon,.close-search {
+.close-search, .close-menu {
+  flex: 1;
+}
+
+.close-menu,.hamburger-icon,.close-search {
   width: 25px;
   height: 40px;
   background-position: right;
-  background-position: 90%;
+  background-position: 47%;
   background-repeat: no-repeat;
   background-size: 25px;
   font-size: 0;
@@ -159,70 +133,63 @@ body {
   border: 0.2em solid #b55858;
 }
 
-.close-search {
-  width: 24%;
-  background-image: url('./icons/cancel.svg');
-  border-radius: 0.5em;
-  background-size: 20px;
-  border: 0.2em solid #b55858;
-} */
-/* .hamburger-icon:hover, .close-menu:hover, .close-search:hover {
-  background-color: #8bbeec;
-} */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Media styles */
-@media only screen and (max-width : 1025px) {
-  .hamburger-icon-wrapper {
-  	display:none;
-  }
-  .close-menu {
-    display:none;
-  }
+.list_view {
+  background: #FEF8F0;
 }
-@media only screen and (max-width : 720px) {
-  .search-locations {
-    font-size: 0.9em
-  }
+
+
+/* Locations list styles  */
+.locations-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  background: rgb(95, 95, 95);
+  color: #dfdede;
 }
-@media only screen and (max-width : 670px) {
-  .search-locations {
-    font-size: 0.85em
-  }
+
+.locations-list-item {
+  padding: 25px 10px;
+  font-size: 1em;
+  border-bottom: 1px dashed gray;
 }
-@media only screen and (max-width : 551px) {
-  .search-locations {
-    font-size: 0.7em
-  }
+
+.locations-list-item:hover{
+  cursor: pointer;
+  color: #AADAFF;
 }
-@media only screen and (max-width : 550px) {
-  .hamburger-icon-wrapper {
-  	display:block;
-  }
-  .close-menu {
-    display:block;
-  }
-  .search-locations {
-    font-size: 1em
+
+.marker-details {
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  display: inline;
+}
+
+.info-title {
+  font-weight: bold;
+}
+
+
+
+@media screen and (min-width: 700px) {
+  html {
+    height: 100vh;
   }
   .list_view {
-    width: 60%
+    /* width: 30%; */
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
   }
-  .marker-list-item {
-    font-size: 0.95em;
+
+  .map-container {
+    /* width: 70%; */
+    height: 100vh;
+    /* border: 1px solid red; */
+    /* position: absolute; */
+    top: 0;
+    right: 0;
+
   }
 }
