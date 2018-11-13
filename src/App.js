@@ -3,11 +3,15 @@ import ListView from './ListView';
 import ShowMap from './ShowMap';
 import escapeRegExp from 'escape-string-regexp';
 
+
+// Foursquare API authentication
 var foursquare = require('react-foursquare')({
   clientID: 'CEEUXJNP2ZJ33ITK2VO0SDF5TGW3DFK5VC5U1EJHFFP15CUM',
   clientSecret: 'NFAD2QOVVJ0BPITYSHYMEFCM0MWGAZ0DB5PNUO4OACUVC2B3'
 });
-//initial location details are provided
+
+
+// Initial location details
 var params = {
   "near": "Waikiki,HI",
   "query": "food",
@@ -15,7 +19,7 @@ var params = {
   "limit": 10,
   "v": 20181111
 };
-//defaultMarkers positions are provided
+// Default marker positions
 var defaultMarkers = [
   {id: 1, name: 'Food Galaxy Restaurant & Coffee Shop', location: {labeledLatLngs: [{
     lat: 21.278930138770743, lng: -157.8258705887782}], formattedAddress: ["2310 Kuhio Ave (btwn Nohonani St. & Nahua St.)"]}, animation: null },
@@ -52,43 +56,6 @@ class App extends Component {
       .catch(error => console.error('Error: ' + error));
   }
 
-
-
-
-/**************** Querying *************************************************************/
-
-  /**
-   * update the markers on the page depending on the user query. filtering of the
-   * locations is based on both defult markers and markers provided by foursquare.
-   */
-  updateMarkers(query){
-    var defaultMarkersFiltered = defaultMarkers
-    this.state.allNearbyLocations.map((location)=>(
-      defaultMarkersFiltered = defaultMarkersFiltered.filter((defaultLocation)=>
-        (location.name!==defaultLocation.name)
-      ))
-    )
-    //get all the locations removing common location from default marker
-    var newLocations = defaultMarkersFiltered.concat(this.state.allNearbyLocations)
-    newLocations=this.setFormattedAddress(newLocations)
-    if(query!=='') {
-      this.findMarkers(query, newLocations)
-    }
-    else{
-      this.setState({activeMarkers: newLocations})
-    }
-  }
-
-   /**
-   * when user types a query, update the marker according to the query
-   */
-  getQuery = (query)=> {
-    this.setState({query})
-    this.updateMarkers(query);
-  }
-
-/*****************************************************************************/
-
   // if a location isn't defined, leave the field blank
   setFormattedAddress(newLocations){
     newLocations.map((location)=> (
@@ -97,34 +64,51 @@ class App extends Component {
     return newLocations
   }
 
+  // hide any open InfoWindows when map is clicked
+  onMapClicked = () =>{
+    if (this.state.infoWindowOpen) { 
+        this.setState({ infoWindowOpen: false, currentMarker: null })
+      }};
 
+/**************** Querying *****************************************/
 
+  // Filter selection based on user queries
+  updateMarkers(query){
+    var defaultMarkersFiltered = defaultMarkers
+    this.state.allNearbyLocations.map((location)=>(
+      defaultMarkersFiltered = defaultMarkersFiltered.filter((defaultLocation)=>
+        (location.name!==defaultLocation.name)
+      ))
+    )
 
+    //get all the locations removing common location from default marker
+    var newLocations = defaultMarkersFiltered.concat(this.state.allNearbyLocations)
+    newLocations=this.setFormattedAddress(newLocations)
 
+    if(query!=='') {
+      this.findMarkers(query, newLocations)
+    }
+    else{
+      this.setState({activeMarkers: newLocations})
+    }
+  }
 
-/**************** Markers *************************************************************/
+  // when user types a query, update the marker according to the query   
+  getQuery = (query)=> {
+    this.setState({query})
+    this.updateMarkers(query);
+  }
 
- 
+/**************** Markers ******************************************/
 
-
-
-
-
-  
-  /**
-   * based on the query, filter out the matching markers on the page and store
-   * them as active markers.
-   */
+  // Make filtered locations active markers
   findMarkers = (query, newLocations)=>{
     const match = new RegExp(escapeRegExp(query), 'i')
     var showLocations = newLocations.filter((location) => match.test(location.name))
     this.setState({activeMarkers:showLocations})
-
-/*****************************************************************************/
-
   }
 
-  /**************** Info Window *************************************************************/
+  /**************** Info Window ************************************/
 
   // display infoWindow when marker is clicked
   showInfoWindow = (props, marker) =>{
@@ -142,11 +126,7 @@ class App extends Component {
         currentMarker: null
     });
 
-   /**
- * showInfoWindowFromList is called when user clicks the sidebar. Store the marker
- * selected as markerClickedFromList and create a new set of markers so that active
- * markers sent to the showMap does not contain the clicked marker
- */
+ // Show InfoWindow from the list 
 showInfoWindowFromList = (marker, index) =>{
   this.setState({
     markerClickedFromList: marker,
@@ -156,54 +136,8 @@ showInfoWindowFromList = (marker, index) =>{
       thisMarker.id !== marker.id      
     ))
   })
-
-  // alert(marker.location)
 }
-  
-
-
-
 /*****************************************************************************/
-
-
-
-
-
-
-
-
-
-  // hide any open infoWindows when map is clicked
-  onMapClicked = () =>{
-  if (this.state.infoWindowOpen) {
-      this.setState({
-        infoWindowOpen: false,
-        currentMarker: null
-      })
-    }
-  };
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   render() {
     return (
