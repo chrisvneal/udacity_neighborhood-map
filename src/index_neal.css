@@ -129,3 +129,23 @@ body {
   margin: 0;
   display: inline;
 }
+
+
+
+@media screen and (min-width: 850px) {
+  .list_view {
+    width: 30%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .map-container {
+    width: 70%;
+    height: 100vh;
+    /* border: 1px solid red; */
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
