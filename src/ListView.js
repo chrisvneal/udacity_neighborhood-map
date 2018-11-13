@@ -59,9 +59,9 @@ class ListView extends Component {
               onClick={(event)=> getQuery('')}>Close</button>
             )}
             {(isHamBurgerIconOn === true) && (
-              <button className='return-hamburger'
+              <button className='close-menu'
               aria-label='return to hamburger icon'
-              onClick={()=> this.getBackHamburgerIcon()}>Back</button>
+              onClick={()=> this.getBackHamburgerIcon()}>Close Menu</button>
             )}
         </div>
 

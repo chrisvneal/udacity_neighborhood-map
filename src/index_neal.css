@@ -32,6 +32,18 @@ body {
   z-index: -1;
 } */
 
+/*********************** hamburger icon styles ***********************/
+
+.hamburger-icon {
+  width: 40px;
+  height: 40px;
+  background-position: 47%;
+  background-repeat: no-repeat;
+  background-size: 30px;
+  cursor: pointer;
+  background-image: url('./icons/hamburger.svg');
+}
+
 /*********************** search styles ***********************/
 .search-locations-input-wrapper {
   padding: 2px;
@@ -68,7 +80,7 @@ body {
   border: 0.2em solid #b55858;
 }
 
-.close-search, .return-hamburger {
+.close-search, .close-menu {
   flex: 1;
 }
 
