@@ -71,7 +71,7 @@ body {
   height: 40px;  
   background-position: right;
   background-image: url('./icons/cancel.svg');
-  background-position: 90%;
+  background-position: 47%;
   background-repeat: no-repeat;
   background-size: 20px;
   font-size: 0;
@@ -80,9 +80,29 @@ body {
   border: 0.2em solid #b55858;
 }
 
+
+
 .close-search, .close-menu {
   flex: 1;
 }
+
+.close-menu,.hamburger-icon,.close-search {
+  width: 25px;
+  height: 40px;
+  background-position: right;
+  background-position: 47%;
+  background-repeat: no-repeat;
+  background-size: 25px;
+  font-size: 0;
+  cursor: pointer;
+}
+.close-menu {
+  background-image: url('./icons/arrow-back.svg');
+  border-radius: 0.5em;
+  border: 0.2em solid #b55858;
+}
+
+
 
 /* Locations list styles  */
 .locations-list {

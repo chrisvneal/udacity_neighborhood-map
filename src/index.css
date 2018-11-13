@@ -141,7 +141,7 @@ body {
 
 
 
-.close-menu,.hamburger-icon,.close-search {
+/* .close-menu,.hamburger-icon,.close-search {
   width: 25px;
   height: 40px;
   background-position: right;
@@ -163,10 +163,22 @@ body {
   border-radius: 0.5em;
   background-size: 20px;
   border: 0.2em solid #b55858;
-}
-.hamburger-icon:hover, .close-menu:hover, .close-search:hover {
+} */
+/* .hamburger-icon:hover, .close-menu:hover, .close-search:hover {
   background-color: #8bbeec;
-}
+} */
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
